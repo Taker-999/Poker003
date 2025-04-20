@@ -15,5 +15,5 @@ export function judgeHand(cards){
     if(counts[0]=== 2 && counts[1]===2) return "2ペア完成！";
     if(counts[0]=== 2) return "1ペア完成！" ;
 
-    return "役なし@カンタ";
+    return "役なし";
 }
