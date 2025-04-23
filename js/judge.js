@@ -1,3 +1,7 @@
+function isFlush(cards){
+    const suits =cards.map(card => Math.floor((card -1)/13));
+    return suits.every(suit => suit === suits[0]);
+}
 export function judgeHand(cards){
     const values =cards.map(card =>card.getValue());
 
@@ -9,6 +13,7 @@ export function judgeHand(cards){
 
     const counts =Object.values(count).sort((a,b) => b-a);
 
+    if(isFlush(cards)) return"フラッシュ完成！";
     if(counts[0]=== 4) return "フォーカード完成！";
     if(counts[0]=== 3 && counts[1]===2) return "フルハウス完成！";
     if(counts[0]=== 3) return "スリーカード完成！";
@@ -17,3 +22,5 @@ export function judgeHand(cards){
 
     return "役なし";
 }
+
+
