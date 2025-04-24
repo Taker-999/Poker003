@@ -19,8 +19,7 @@ document.getElementById("flash-test").addEventListener("click", () => {
     console.log("isFlush結果:", flush);
 
     // HTML に結果を表示
-    const resultDiv = document.getElementById("result");
-    resultDiv.textContent = `役判定: ${result}, フラッシュ判定: ${flush ? "フラッシュです！" : "フラッシュではありません！"}`;
+    document.getElementById("result-area").textContent =result;
 });
 document.getElementById("fourcard-test").addEventListener("click",() =>{
     //テスト用手札
