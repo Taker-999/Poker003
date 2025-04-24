@@ -1,4 +1,4 @@
-function isFlush(cards){
+export function isFlush(cards){
     const suits =cards.map(card => Math.floor((card -1)/13));
     return suits.every(suit => suit === suits[0]);
 }
