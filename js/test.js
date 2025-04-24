@@ -45,5 +45,5 @@ const testHand=[
 ];
 const result = judgeHand(testHand);
 console.log("役判定:",result);
-document.getElementById("text-area").textContent =result;
+document.getElementById("result-area").textContent =result;
 });
