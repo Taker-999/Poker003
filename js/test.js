@@ -41,7 +41,7 @@ const testHand=[
     new Card(2),  //2
     new Card(3),
     new Card(4),
-    new Card(5),
+    new Card(6),
 ];
 const result = judgeHand(testHand);
 console.log("役判定:",result);
