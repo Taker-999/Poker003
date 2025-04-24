@@ -2,6 +2,18 @@ export function isFlush(cards){
     const suits =cards.map(card => Math.floor((card -1)/13));
     return suits.every(suit => suit === suits[0]);
 }
+export function isStraight(values){ //ストレート判定関数
+    const sorted =[...values].sort((a,b) => a - b);
+
+    const lowAce =JSON.stringify(sorted) ===JSON.stringify([1,2,3,4,5]);
+    if(lowAce) return true;
+    for(let i=0; i<sorted.length-1;i++)
+    if(sorted[i+1] !==sorted[i]+1){
+        return false;
+    }
+        return true;
+}
+
 export function judgeHand(cards){
     const values =cards.map(card =>card.getValue());
 
@@ -19,6 +31,9 @@ export function judgeHand(cards){
     if(counts[0]=== 3) return "スリーカード完成！";
     if(counts[0]=== 2 && counts[1]===2) return "2ペア完成！";
     if(counts[0]=== 2) return "1ペア完成！" ;
+
+    //ここでストレートチェックを追加
+    if(isStraight(values))return"ストレート完成！";
 
     return "役なし";
 }
