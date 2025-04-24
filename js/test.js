@@ -1,5 +1,5 @@
 import Card from "./card.js";
-import { judgeHand, isFlush } from "./judge.js";
+import { judgeHand, isFlush,isStraight } from "./judge.js"; //judge要素完成時に引用
 
 // flash-test ボタンが押された時に実行
 document.getElementById("flash-test").addEventListener("click", () => {
@@ -32,4 +32,18 @@ document.getElementById("fourcard-test").addEventListener("click",() =>{
     const result = judgeHand(testHand);
     console.log("役判定:",result);
     document.getElementById("result-area").textContent =result;
+});
+//straight-testボタンが押されたときに実行
+document.getElementById("straight-test").addEventListener("click",() => {
+//テスト用手札
+const testHand=[
+    new Card(1),  //1
+    new Card(2),  //2
+    new Card(3),
+    new Card(4),
+    new Card(5),
+];
+const result = judgeHand(testHand);
+console.log("役判定:",result);
+document.getElementById("text-area").textContent =result;
 });
