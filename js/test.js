@@ -22,3 +22,15 @@ document.getElementById("flash-test").addEventListener("click", () => {
     const resultDiv = document.getElementById("result");
     resultDiv.textContent = `役判定: ${result}, フラッシュ判定: ${flush ? "フラッシュです！" : "フラッシュではありません！"}`;
 });
+document.getElementById("fourcard-test").addEventListener("click",() =>{
+    //テスト用手札
+    const testHand =[
+        new Card(1), //♠A
+        new Card(14),//♥A
+        new Card(27),//♦A
+        new Card(40),//♣A
+    ];
+    const result = judgeHand(testHand);
+    console.log("役判定:",result);
+    document.getElementById("result-area").textContent =result;
+});
