@@ -52,11 +52,11 @@ document.getElementById("result-area").textContent =result;
 document.getElementById("straightflush-test").addEventListener("click",() =>{
     //テスト用手札
     const testHand=[
-        card(15),
-        card(16),
-        card(17),
-        card(18),
-        card(19)
+        new Card(15),
+        new Card(16),
+        new Card(17),
+        new Card(18),
+        new Card(19),
     ];
     const result = isStraightFlush(testHand)
     ?"ストレートフラッシュ完成！"
