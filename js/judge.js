@@ -13,11 +13,20 @@ export function isStraight(values){ //ストレート判定関数 ストレー�
     }
         return true;
 }
-export function isStraightFlush(cards){
+export function isStraightFlush(cards){ //ストレートフラッシュ判定関数　cards
     const suits =cards.map(card => Math.floor((card.index-1)/13));
     const values = cards.map(card => card.getValue());
 
     return isFlush(suits)&& isStraight(values);
+}
+export function isRoyalflush(cards){ //ロイヤルフラッシュ判定関数　
+    const values =cards.map(card => card.getValue()).sort((a,b) => a-b);
+    const suits  =cards.map(card => Math.floor((card.index-1)/13));
+
+    const isFlush =suits.every(suit => suit === suits[0]);
+    const isRoyal =JSON.stringify(values) === JSON.stringify([1,10,11,12,13]);
+
+    return isFlush && isRoyal;
 }
 export function judgeHand(cards){
     const values =cards.map(card =>card.getValue());
