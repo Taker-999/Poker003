@@ -19,7 +19,7 @@ export function isStraightFlush(cards){ //ストレートフラッシュ判定�
 
     return isFlush(suits)&& isStraight(values);
 }
-export function isRoyalflush(cards){ //ロイヤルフラッシュ判定関数　
+export function isRoyalFlush(cards){ //ロイヤルフラッシュ判定関数　
     const values =cards.map(card => card.getValue()).sort((a,b) => a-b);
     const suits  =cards.map(card => Math.floor((card.index-1)/13));
 
