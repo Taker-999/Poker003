@@ -1,8 +1,8 @@
-export function isFlush(cards){
+export function isFlush(cards){　　　//フラッシュ判定関数 フラッシュの手札はcardsとする。
     const suits =cards.map(card => Math.floor((card -1)/13));
     return suits.every(suit => suit === suits[0]);
 }
-export function isStraight(values){ //ストレート判定関数
+export function isStraight(values){ //ストレート判定関数 ストレートの手札はvaluesとする。
     const sorted =[...values].sort((a,b) => a - b);
 
     const lowAce =JSON.stringify(sorted) ===JSON.stringify([1,2,3,4,5]);
@@ -13,7 +13,12 @@ export function isStraight(values){ //ストレート判定関数
     }
         return true;
 }
+export function isStraightFlush(cards){
+    const suits =cards.map(card => Math.floor((card.index-1)/13));
+    const values = cards.map(card => card.getValue());
 
+    return isFlush(suits)&& isStraight(values);
+}
 export function judgeHand(cards){
     const values =cards.map(card =>card.getValue());
 
