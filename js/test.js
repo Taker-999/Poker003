@@ -1,5 +1,5 @@
 import Card from "./card.js";
-import { judgeHand, isFlush,isStraight, isStraightFlush, isRoyalflush } from "./judge.js"; //judge要素完成時に引用
+import { judgeHand, isFlush, isStraight, isStraightFlush, isRoyalflush } from "./judge.js"; //judge要素完成時に引用
 
 // flash-test ボタンが押された時に実行
 document.getElementById("flash-test").addEventListener("click", () => {
@@ -67,7 +67,7 @@ document.getElementById("straightflush-test").addEventListener("click",() =>{
 });
 
 //royalflush-testボタンが押されたときに実行
-document.getElementsById("royalflush-test").addEventListener("click",()=>{
+document.getElementById("royalflush-test").addEventListener("click",()=>{
     const testHand =[
         new Card(10),// ♠10
         new Card(11),// ♠11
@@ -76,7 +76,7 @@ document.getElementsById("royalflush-test").addEventListener("click",()=>{
         new Card(1), // ♠1
     ];
 
-    const result =isRoyalflush(testHand)
+    const result =isRoyalFlush(testHand)
     ?"ロイヤルフラッシュ完成!"
     :"ロイヤルフラッシュではありません"
 
