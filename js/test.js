@@ -52,7 +52,7 @@ document.getElementById("result-area").textContent =result;
 document.getElementById("straightflush-test").addEventListener("click",() =>{
     //テスト用手札
     const testHand=[
-        new Card(15),
+        new Card(13),
         new Card(16),
         new Card(17),
         new Card(18),
