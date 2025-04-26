@@ -68,6 +68,8 @@ document.getElementById("straightflush-test").addEventListener("click",() =>{
 
 //royalflush-testボタンが押されたときに実行
 document.getElementById("royalflush-test").addEventListener("click",()=>{
+    console.log("ボタンが押された"); // ← これを追加！
+    
     const testHand =[
         new Card(10),// ♠10
         new Card(11),// ♠11
