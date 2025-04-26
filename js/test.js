@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         new Card(14),//♥A
         new Card(27),//♦A
         new Card(40),//♣A
+        new Card(3),//おまけカード
     ];
     const result = judgeHand(testHand);
     console.log("役判定:",result);
