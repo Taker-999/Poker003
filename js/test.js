@@ -105,6 +105,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = judgeHand(testHand);
     console.log("役判定:", result);
     document.getElementById("result-area").textContent = result;
+    
+    const handArea = document.getElementById("hand-area");
+    handArea.innerHTML="";//前のカードを消す
+    
+    testHand.forEach(card =>{
+      const img =document.createElement("img");
+      img.src = "images/"+ String(card.index).padStart(2,"0")+".png";
+      img.className ="card you";
+      handArea.appendChild(img);
+    });
   });
 
   // fourcard-test ボタン
