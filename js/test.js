@@ -1,4 +1,4 @@
-import Card from "./card.js";
+/*import Card from "./card.js";
 import { judgeHand, isFlush, isStraight, isStraightFlush, isRoyalFlush } from "./judge.js"; //judge要素完成時に引用
 
 console.log("test.jsが読み込まれました！")
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     // HTML に結果を表示
     document.getElementById("result-area").textContent =result;
     });
+
     document.getElementById("fourcard-test").addEventListener("click",() =>{
     //テスト用手札
     const testHand =[
@@ -88,4 +89,66 @@ document.addEventListener("DOMContentLoaded",() =>{
     console.log("役判定:",result);
     document.getElementById("result-area").textContent =result;
     });
+});
+*/
+import Card from "./card.js";
+import { judgeHand, isFlush, isStraight, isStraightFlush, isRoyalFlush } from "./judge.js";
+
+console.log("test.js が読み込まれました！");
+
+document.addEventListener("DOMContentLoaded", () => {
+  // flush-test ボタン
+  document.getElementById("flush-test").addEventListener("click", () => {
+    const testHand = [
+      new Card(1), new Card(2), new Card(3), new Card(4), new Card(5),
+    ];
+    const result = judgeHand(testHand);
+    console.log("役判定:", result);
+    document.getElementById("result-area").textContent = result;
+  });
+
+  // fourcard-test ボタン
+  document.getElementById("fourcard-test").addEventListener("click", () => {
+    const testHand = [
+      new Card(1), new Card(14), new Card(27), new Card(40), new Card(5),
+    ];
+    const result = judgeHand(testHand);
+    console.log("役判定:", result);
+    document.getElementById("result-area").textContent = result;
+  });
+
+  // straight-test ボタン
+  document.getElementById("straight-test").addEventListener("click", () => {
+    const testHand = [
+      new Card(1), new Card(2), new Card(3), new Card(4), new Card(5),
+    ];
+    const result = judgeHand(testHand);
+    console.log("役判定:", result);
+    document.getElementById("result-area").textContent = result;
+  });
+
+  // straightflush-test ボタン
+  document.getElementById("straightflush-test").addEventListener("click", () => {
+    const testHand = [
+      new Card(13), new Card(16), new Card(17), new Card(18), new Card(19),
+    ];
+    const result = isStraightFlush(testHand)
+      ? "ストレートフラッシュ完成！"
+      : "ストレートフラッシュではありません";
+    console.log("役判定:", result);
+    document.getElementById("result-area").textContent = result;
+  });
+
+  // royalflush-test ボタン
+  document.getElementById("royalflush-test").addEventListener("click", () => {
+    console.log("ロイヤルフラッシュテスト：ボタンが押された！");
+    const testHand = [
+      new Card(10), new Card(11), new Card(12), new Card(13), new Card(1),
+    ];
+    const result = isRoyalFlush(testHand)
+      ? "ロイヤルフラッシュ完成！"
+      : "ロイヤルフラッシュではありません";
+    console.log("役判定:", result);
+    document.getElementById("result-area").textContent = result;
+  });
 });
