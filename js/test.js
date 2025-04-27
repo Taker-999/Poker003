@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("役判定:", result);
     document.getElementById("result-area").textContent = result;
 
-    const nodes =document.querySelector(".card.you");
+    const nodes =document.querySelectorAll(".card.you");
 
     testHand.forEach((card,i) => {
       const img =nodes[i];
