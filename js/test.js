@@ -106,15 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("役判定:", result);
     document.getElementById("result-area").textContent = result;
     
-    const handArea = document.getElementById("hand-area");
-    handArea.innerHTML="";//前のカードを消す
+    const nodes = document.querySelectorAll(".card.you");//元々5枚あるimgを取得
     
-    testHand.forEach(card =>{
-      const img =document.createElement("img");
-      img.src = "images/"+ String(card.index).padStart(2,"0")+".png";
-      img.className ="card you";
-      handArea.appendChild(img);
+    testHand.forEach((card,i) => {
+      const img =nodes[i];
+      const cardImage ="images/"+ String(card.index).padStart(2,"0") + ".png";
+      img.src = cardImage;
     });
+    //結果も表示
+    document.getElementById("result-area").textContent =result;
   });
 
   // fourcard-test ボタン
