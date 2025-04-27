@@ -1,6 +1,7 @@
 import Card from "./card.js";
 import { judgeHand, isFlush, isStraight, isStraightFlush, isRoyalFlush } from "./judge.js"; //judge要素完成時に引用
 
+console.log("test.jsが読み込まれました！")
 // flash-test ボタンが押された時に実行
 document.addEventListener("DOMContentLoaded",() =>{
    document.getElementById("flash-test").addEventListener("click", () => {
