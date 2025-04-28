@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // flush-test ボタン
   document.getElementById("flush-test").addEventListener("click", () => {
     const testHand = [
-      new Card(1), new Card(2), new Card(3), new Card(4), new Card(5),
+      new Card(1), new Card(4), new Card(7), new Card(9), new Card(12),
     ];
     const result = judgeHand(testHand);
     console.log("役判定:", result);
