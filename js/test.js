@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // straight-test ボタン
   document.getElementById("straight-test").addEventListener("click", () => {
     const testHand = [
-      new Card(1), new Card(2), new Card(3), new Card(4), new Card(5),
+      new Card(1), new Card(15), new Card(29), new Card(4), new Card(5),
     ];
     const result = judgeHand(testHand);
     console.log("役判定:", result);
