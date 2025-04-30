@@ -1,6 +1,7 @@
 export function isFlush(cards){　　　//フラッシュ判定関数 フラッシュの手札はcardsとする。
-    const suits =cards.map(card => Math.floor((card -1)/13));
+    const suits =cards.map(card => card.getSuit());
     return suits.every(suit => suit === suits[0]);
+
 }
 export function isStraight(values){ //ストレート判定関数 ストレートの手札はvaluesとする。
     const sorted =[...values].sort((a,b) => a - b);
@@ -39,6 +40,7 @@ export function judgeHand(cards){
 
     const counts =Object.values(count).sort((a,b) => b-a);
 
+    
     if(isFlush(cards)) return"フラッシュ完成！";
     if(counts[0]=== 4) return "フォーカード完成！";
     if(counts[0]=== 3 && counts[1]===2) return "フルハウス完成！";
