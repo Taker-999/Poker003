@@ -144,6 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = judgeHand(testHand);
     console.log("役判定:", result);
     document.getElementById("result-area").textContent = result;
+    const nodes =document.querySelectorAll(".card.you");
+
+    testHand.forEach((card,i) => {
+      const img =nodes[i];
+      img.src="images/"+String(card.index).padStart(2,"0")+".png";
+    });
+    //結果を表示
+    document.getElementById("result-area").textContent =result;
   });
 
   // straightflush-test ボタン

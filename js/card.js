@@ -2,10 +2,10 @@ export default class Card{
     constructor(index){
         this.index =index;
     }
-getValue(){
+getValue(){  //ストレート手札
     return(this.index - 1) % 13 +1;
     }
-getSuit(){
+getSuit(){　　//フラッシュ手札
     return Math.floor((this.index -1)/13);
 }
 }
