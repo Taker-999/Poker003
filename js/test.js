@@ -126,8 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("役判定:", result);
     document.getElementById("result-area").textContent = result;
 
-    const nodes =document.querySelectorAll(".card.you");
-
+    const nodes =document.querySelectorAll(".card.you");//ここから下5行手札カード画像例を表示
     testHand.forEach((card,i) => {
       const img =nodes[i];
       img.src="images/"+String(card.index).padStart(2,"0")+".png";
@@ -144,8 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = judgeHand(testHand);
     console.log("役判定:", result);
     document.getElementById("result-area").textContent = result;
-    const nodes =document.querySelectorAll(".card.you");
-
+    const nodes =document.querySelectorAll(".card.you");//ここから下5行手札カード画像例を表示
     testHand.forEach((card,i) => {
       const img =nodes[i];
       img.src="images/"+String(card.index).padStart(2,"0")+".png";
@@ -163,6 +161,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "ストレートフラッシュ完成！"
       : "ストレートフラッシュではありません";
     console.log("役判定:", result);
+    const nodes =document.querySelectorAll(".card.you");//ここから下5行手札カード画像例を表示
+
+    testHand.forEach((card,i) => {
+      const img =nodes[i];
+      img.src="images/"+String(card.index).padStart(2,"0")+".png";
+    });
     document.getElementById("result-area").textContent = result;
   });
 
@@ -176,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "ロイヤルフラッシュ完成！"
       : "ロイヤルフラッシュではありません";
     console.log("役判定:", result);
+    
     document.getElementById("result-area").textContent = result;
   });
 });
