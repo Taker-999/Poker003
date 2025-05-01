@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // straightflush-test ボタン
   document.getElementById("straightflush-test").addEventListener("click", () => {
     const testHand = [
-      new Card(15), new Card(16), new Card(17), new Card(18), new Card(19),
+      new Card(9), new Card(10), new Card(11), new Card(12), new Card(13),
     ];
     const result = isStraightFlush(testHand)
       ? "ストレートフラッシュ完成！"
