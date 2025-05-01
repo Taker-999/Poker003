@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // straightflush-test ボタン
   document.getElementById("straightflush-test").addEventListener("click", () => {
     const testHand = [
-      new Card(13), new Card(16), new Card(17), new Card(18), new Card(19),
+      new Card(15), new Card(16), new Card(17), new Card(18), new Card(19),
     ];
     const result = isStraightFlush(testHand)
       ? "ストレートフラッシュ完成！"
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "ロイヤルフラッシュ完成！"
       : "ロイヤルフラッシュではありません";
     console.log("役判定:", result);
-    
+
     document.getElementById("result-area").textContent = result;
   });
 });
