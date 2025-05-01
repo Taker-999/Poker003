@@ -16,7 +16,7 @@ export function isStraight(values){ //ストレート判定関数 ストレー�
 }
 export function isStraightFlush(cards){ //ストレートフラッシュ判定関数　cards
     const values = cards.map(card => card.getValue());
-    return isFlush(suits)&& isStraight(values);
+    return isFlush(cards)&& isStraight(values);
 }
 export function isRoyalFlush(cards){ //ロイヤルフラッシュ判定関数　
     const values =cards.map(card => card.getValue()).sort((a,b) => a-b);
