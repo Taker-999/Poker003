@@ -3,7 +3,7 @@ export function isOnepair(cards){
     const count = {};
 
     values.forEach(value => {
-      const[value]=(count[value]|| 0) +1;
+      count[value]=(count[value] || 0) +1;
 });
 
     const pairs =Object.values(count).filter(c => c ===2);
