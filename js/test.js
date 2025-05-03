@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nodes=document.querySelectorAll(".card.you");
     testHand.forEach((card,i)=>{
       const img = nodes[i];
-      img.src="imges/"+String(card.index).padStart(2,"0")+".png";
+      img.src="images/"+String(card.index).padStart(2,"0")+".png";
     });
     document.getElementById("result-area").textContent =result;
   });
