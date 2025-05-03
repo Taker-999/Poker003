@@ -40,6 +40,8 @@ export function isRoyalFlush(cards){ //ロイヤルフラッシュ判定関数�
     return isFlush && isRoyal;
 }
 export function judgeHand(cards){
+    console.log(cards.map(c => `${c.getSuit()}-${c.getValue()}`));
+
     const values =cards.map(card =>card.getValue());
 
     //値の頻度を数える
