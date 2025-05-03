@@ -2,8 +2,8 @@ export function isOnepair(cards){
     const values = cards.map(card =>card.getValue());
     const count = {};
 
-    values.forEach(v => {
-      const[v]=(count[v]|| 0) +1;
+    values.forEach(value => {
+      const[value]=(count[value]|| 0) +1;
 });
 
     const pairs =Object.values(count).filter(c => c ===2);
