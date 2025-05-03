@@ -44,7 +44,7 @@ export function judgeHand(cards){
     if(counts[0]=== 3 && counts[1]===2) return "フルハウス完成！";
     if(counts[0]=== 3) return "スリーカード完成！";
     if(counts[0]=== 2 && counts[1]===2) return "2ペア完成！";
-    if(counts[0]=== 2) return "1ペア完成！" ;
+    if(isOnepair(cards)) return "1ペア完成！" ;
 
     //ここでストレートチェックを追加
     if(isStraight(values))return"ストレート完成！";
@@ -52,4 +52,14 @@ export function judgeHand(cards){
     return "役なし";
 }
 
+function isOnepair(cards){
+    const values = cards.map(card =>card.getValue());
+    const count = {};
 
+    values.forEach(v => {
+      const[v]=(count[v]|| 0) +1;
+});
+
+    const pairs =Object.values(count).filter(c => c ===2);
+    return pairs.length ===1;//1ペアある。
+}
