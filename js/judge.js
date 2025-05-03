@@ -1,3 +1,15 @@
+export function isOnepair(cards){
+    const values = cards.map(card =>card.getValue());
+    const count = {};
+
+    values.forEach(v => {
+      const[v]=(count[v]|| 0) +1;
+});
+
+    const pairs =Object.values(count).filter(c => c ===2);
+    return pairs.length ===1;//1ペアある。
+}
+
 export function isFlush(cards){　　　//フラッシュ判定関数 フラッシュの手札はcardsとする。
     const suits =cards.map(card => card.getSuit());
     return suits.every(suit => suit === suits[0]);
@@ -50,16 +62,4 @@ export function judgeHand(cards){
     if(isStraight(values))return"ストレート完成！";
 
     return "役なし";
-}
-
-function isOnepair(cards){
-    const values = cards.map(card =>card.getValue());
-    const count = {};
-
-    values.forEach(v => {
-      const[v]=(count[v]|| 0) +1;
-});
-
-    const pairs =Object.values(count).filter(c => c ===2);
-    return pairs.length ===1;//1ペアある。
 }
