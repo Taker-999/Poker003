@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //One-pair-test ボタン
   document.getElementById("one-pair-test").addEventListener("click",()=>{
     const testHand =[
-      new Card(2),new Card(5),new Card(6),new Card(6),new Card(11),
+      new Card(2),new Card(5),new Card(6),new Card(26),new Card(39),
     ];
     const result =judgeHand(testHand);
     console.log("役判定:",result);
