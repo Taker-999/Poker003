@@ -32,8 +32,8 @@ export function judgeHand(cards){
 
     //値の頻度を数える
     const count={};
-    values.forEach(v => {
-        count [v] =(count[v] || 0)+1;
+    values.forEach(value => {
+        count [value] =(count[v] || 0)+1;
     });
 
     const counts =Object.values(count).sort((a,b) => b-a);
