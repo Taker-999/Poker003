@@ -97,6 +97,22 @@ import { judgeHand, isFlush, isStraight, isStraightFlush, isRoyalFlush } from ".
 console.log("test.js が読み込まれました！");
 
 document.addEventListener("DOMContentLoaded", () => {
+  //One-pair-test ボタン
+  document.getElementById("one-pair-test").addEventListener("click",()=>{
+    const testHand =[
+      new Card(2),new Card(5),new Card(6),new Card(6),new Card(11),
+    ];
+    const result =judgeHand(testHand);
+    console.log("役判定:",result);
+
+    const nodes=document.querySelectorAll(".card.you");
+    testHand.forEach((card,i)=>{
+      const img = nodes[i];
+      img.src="imges/"+String(card.index).padStart(2,"0")+".png";
+    });
+    document.getElementById("result-area").textContent =result;
+  });
+
   // flush-test ボタン
   document.getElementById("flush-test").addEventListener("click", () => {
     const testHand = [
