@@ -10,21 +10,36 @@ export function isOnepair(cards){ //ワンペア判定
     return pairs.length ===1;//1ペアある。
 }
 
-export function isFlush(cards){　　　//フラッシュ判定関数 フラッシュの手札はcardsとする。
+export function isFlush(cards){ //フラッシュ判定関数 フラッシュの手札はcardsとする。
     const suits =cards.map(card => card.getSuit());
     return suits.every(suit => suit === suits[0]);
 
 }
 export function isStraight(values){ //ストレート判定関数 ストレートの手札はvaluesとする。
     const sorted =[...values].sort((a,b) => a - b);
-
+//ローストレート（A,2,3,4,5)のチェック
     const lowAce =JSON.stringify(sorted) ===JSON.stringify([1,2,3,4,5]);
     if(lowAce) return true;
+//ハイストレートのチェック（10,J,Q,K,A=10,11,12,13,14)
+//Aが含まれていたら、それを14とする。
+if(values.includes(1)){
+    const converted =values.map(v=v===1? 14:v);
+    const sortedHighAce =converted.sort((a,b)=>a-b);
+    let isHighAceStraight =true;
+    for(let i=0;sortedHighAce.length-1;i++){
+        if(sortedHighAce[i+1]!==sortedHighAce[i]){
+            isHighAceStraight =false;
+            break;
+        }
+    }
+    if(isHighAceStraight) return true;
+}
+//通常のストレート
     for(let i=0; i<sorted.length-1;i++)
     if(sorted[i+1] !==sorted[i]+1){
         return false;
     }
-        return true;
+    return true;
 }
 export function isStraightFlush(cards){ //ストレートフラッシュ判定関数　cards
     const values = cards.map(card => card.getValue());
@@ -60,9 +75,6 @@ export function judgeHand(cards){
     if(counts[0]=== 3) return "スリーカード完成！";
     if(counts[0]=== 2 && counts[1]===2) return "2ペア完成！";
     if(isOnepair(cards)) return "1ペア完成！" ;
-
-    //ここでストレートチェックを追加
-    if(isStraight(values))return"ストレート完成！";
 
     return "役なし";
 }
