@@ -26,7 +26,7 @@ if(values.includes(1)){
     const converted =values.map(v=> v===1? 14:v);
     const sortedHighAce =converted.sort((a,b)=>a-b);
     let isHighAceStraight =true;
-    for(let i=0;sortedHighAce.length-1;i++){
+    for(let i=0;i < sortedHighAce.length-1; i++){
         if(sortedHighAce[i+1]!==sortedHighAce[i]){
             isHighAceStraight =false;
             break;
