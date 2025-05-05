@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // two-pair-testボタン
   document.getElementById("two-pair-test").addEventListener("click",()=>{
     const testHand=[
-      new Card(3),new Card(3),new Card(7),new Card(7),new Card(12),
+      new Card(3),new Card(16),new Card(30),new Card(43),new Card(44),
     ];
     const result =judgeHand(testHand);
     console.log("役判定",result);
