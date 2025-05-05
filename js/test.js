@@ -112,7 +112,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.getElementById("result-area").textContent =result;
   });
+  // two-pair-testボタン
+  document.getElementById("two-pair-test").addEventListener("click",()=>{
+    const testHand=[
+      new Card(3),new Card(3),new Card(7),new Card(7),new Card(12),
+    ];
+    const result =judgeHand(testHand);
+    console.log("役判定",result);
 
+    const nodes=document.querySelectorAll(".card.you");
+    testHand.forEach((card,i)=>{
+      const img = nodes[i];
+      img.src="images/"+String(card.index).padStart(2,"0")+".png";
+    });
+    document.getElementById("result-area").textContent=result;
+  });
   // flush-test ボタン
   document.getElementById("flush-test").addEventListener("click", () => {
     const testHand = [
