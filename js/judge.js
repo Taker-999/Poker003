@@ -1,4 +1,4 @@
-export function isOnepair(cards){
+export function isOnepair(cards){ //ワンペア判定
     const values = cards.map(card =>card.getValue());
     const count = {};
 
@@ -40,7 +40,6 @@ export function isRoyalFlush(cards){ //ロイヤルフラッシュ判定関数�
     return isFlush && isRoyal;
 }
 export function judgeHand(cards){
-    console.log(cards.map(c => `${c.getSuit()}-${c.getValue()}`));
 
     const values =cards.map(card =>card.getValue());
 
@@ -52,10 +51,12 @@ export function judgeHand(cards){
 
     const counts =Object.values(count).sort((a,b) => b-a);
 
-    
-    if(isFlush(cards)) return"フラッシュ完成！";
+    if(isRoyalFlush(cards)) return"ロイヤルフラッシュ完成!";
+    if(isStraightFlush(cards)) return"ストレートフラッシュ完成！";
     if(counts[0]=== 4) return "フォーカード完成！";
     if(counts[0]=== 3 && counts[1]===2) return "フルハウス完成！";
+    if(isFlush(cards)) return"フラッシュ完成！";
+    if(isStraight(values)) return "ストレート完成！";
     if(counts[0]=== 3) return "スリーカード完成！";
     if(counts[0]=== 2 && counts[1]===2) return "2ペア完成！";
     if(isOnepair(cards)) return "1ペア完成！" ;
