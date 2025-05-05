@@ -23,7 +23,7 @@ export function isStraight(values){ //ストレート判定関数 ストレー�
 //ハイストレートのチェック（10,J,Q,K,A=10,11,12,13,14)
 //Aが含まれていたら、それを14とする。
 if(values.includes(1)){
-    const converted =values.map(v=v===1? 14:v);
+    const converted =values.map(v=> v===1? 14:v);
     const sortedHighAce =converted.sort((a,b)=>a-b);
     let isHighAceStraight =true;
     for(let i=0;sortedHighAce.length-1;i++){
