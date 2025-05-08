@@ -9,7 +9,7 @@ export function isOnepair(cards){ //ワンペア判定
     const pairs =Object.values(count).filter(c => c ===2);
     return pairs.length ===1;//1ペアある。
 }
-
+/*
 export function isFlush(cards){ //フラッシュ判定関数 フラッシュの手札はcardsとする。
     const suits =cards.map(card => card.getSuit());
     return suits.every(suit => suit === suits[0]);
@@ -39,8 +39,29 @@ if(values.includes(1)){
     if(sorted[i+1] !==sorted[i]+1){
         return false;
     }
-    return true;
-}
+    return true;  */
+    export function isStraight(values) {
+        // 重複を除く（同じ数が複数あるとストレートではない）
+        const unique = [...new Set(values)];
+      
+        // ストレートは5枚の連番 → 重複があるとNG
+        if (unique.length !== 5) return false;
+      
+        // 昇順に並べ替える
+        unique.sort((a, b) => a - b);
+      
+        // A=1 のローストレート対応（A-2-3-4-5）
+        const lowAce = JSON.stringify(unique) === JSON.stringify([1, 2, 3, 4, 5]);
+        if (lowAce) return true;
+      
+        // 通常のストレート（差がすべて1であるかを確認）
+        for (let i = 0; i < 4; i++) {
+          if (unique[i + 1] !== unique[i] + 1) return false;
+        }
+      
+        return true;
+      }
+
 export function isStraightFlush(cards){ //ストレートフラッシュ判定関数　cards
     const values = cards.map(card => card.getValue());
     return isFlush(cards)&& isStraight(values);
