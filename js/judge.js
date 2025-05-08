@@ -14,7 +14,7 @@ export function isFlush(cards){ //フラッシュ判定関数 フラッシュの
     const suits =cards.map(card => card.getSuit());
     return suits.every(suit => suit === suits[0]);
 
-}
+}/*
 export function isStraight(values){ //ストレート判定関数 ストレートの手札はvaluesとする。
     const sorted =[...values].sort((a,b) => a - b);
 //ローストレート（A,2,3,4,5)のチェック
@@ -39,7 +39,7 @@ if(values.includes(1)){
     if(sorted[i+1] !==sorted[i]+1){
         return false;
     }
-    return true;   /*
+    return true;   */
     export function isStraight(values) {
         // 重複を除く（同じ数が複数あるとストレートではない）
         const unique = [...new Set(values)];
@@ -60,8 +60,8 @@ if(values.includes(1)){
         }
       
         return true;
-      }  */
-}
+      }  
+
 export function isStraightFlush(cards){ //ストレートフラッシュ判定関数　cards
     const values = cards.map(card => card.getValue());
     return isFlush(cards)&& isStraight(values);
