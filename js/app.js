@@ -6,6 +6,8 @@ const startButton = document.getElementById("start");
 const revealButton =document.getElementById("reveal");
 const drawButton = document.getElementById("draw"); 
 const nodes=document.querySelectorAll(".card.you");
+const playerCards = document.querySelectorAll('.card.you');//アニメーションでの追加
+const opponentCards = document.querySelectorAll('.card.opponent');//アニメーションでの追加
 let cards=[];
 
 startButton.addEventListener("click",()=> {
@@ -21,8 +23,13 @@ cards=deck.slice(0, 5);
 nodes.forEach(img => {
     img.src="images/blue.png";
 });
+
+animateDealing(cards);//配るアニメーションの関数を呼び出す。
+
 revealButton.disabled =false; //Revealボタンを有効に
 });
+
+
 //Revealボタン：表面を表示し、役を判定
 revealButton.addEventListener("click",()=> {
 cards.forEach((card,i)  => {
@@ -59,6 +66,19 @@ function drawCards(){
     img.src =cardImage;
     });
 }
+function animateDealing(cards){
+    [...Array(5)].forEach((_,i)=> {
+        setTimeout(()=>{
+            opponentCards[i].classList.add('deal-to-top');
+        setTimeout(()=>{
+            playerCards[i].classList.add('deal-to-bottom');
+        },300);//交互に少し遅らせて
+        },i*600);
+    });
+}
+
+
 function displayResult(resultText){
     document.getElementById("result-area").innerText= resultText;
 }
+ 
