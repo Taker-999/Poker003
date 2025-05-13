@@ -27,6 +27,8 @@ body {
   justify-content: center;
   gap: 10px;
   margin: 20px 0;
+  margin-bottom: 80px;/*下に余白追加でボタンとの重なりを防ぐ*/
+  padding-bottom: 40px;/*十分な下にスペース　*/
 }
 
 /*カード画像*/
@@ -42,6 +44,8 @@ body {
   font-size:20px;
   margin: 20px 0;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;/*ボタンと結果表示エリアとの間にスペースを設ける*/
 }
 
 /*ボタン群を画面下に配置（必要に応じて固定）*/
