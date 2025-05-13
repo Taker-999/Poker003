@@ -1,4 +1,78 @@
+/*全体のレイアウト設定*/
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background-color: #2e2e2e;
+  font-family: sans-serif;
+}
+
+/*山札の表示位置*/
+.deck-area {
+  margin: 20px 0;
+}
+.deck-card {
+  width: 80px;
+  height: auto;
+}
+
+/* プレーヤーの手札、相手の手札*/
+.hand-row,
+.opponent-hand {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/*カード画像*/
+.card {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+/*結果表示エリア*/
+#result-area {
+  color: white;
+  font-size:20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/*ボタン群を画面下に配置（必要に応じて固定）*/
+.botton-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: #1c1c1c;
+  width: 100px;
+  box-sizing: border-box;
+}
+
+/*ボタン共通スタイル*/
+.button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border:none;
+  border-radius: 6px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.botton:disabled{
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+/*body {
   background: url(../images/board.png);
 }
 
@@ -86,17 +160,19 @@ body {
   width: 60px;
   height: 90px;
   margin:0 5px;
-}
+}*/
+/*カードを配るアニメーション*/
 @keyframes flyFromDeckToTop {
   from{
     transform: translate(0,0);
     opacity: 0;
   }
   to{
-    transform: translate(-100px,-150px);/*相手の手札の方向へ*/
+    transform: translate(-100px,-150px); /*相手の手札の方向へ*/
     opacity: 1;
   }
 }
+
 @keyframes flyFromDeckToBottom {
   from{
     transform: translate(0,0);

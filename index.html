@@ -2,23 +2,23 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poker</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!--相手の手札-->
+       <!--山札-->
+      <div class="deck-area">
+        <img src="images/blue.png" id="deck" class="deck-card card" alt="山札">
+      </div>
+
+  <!--相手の手札-->
       <div class="opponent-hand">
         <img class="card opponent" alt="op1" />
         <img class="card opponent" alt="op2"/>
         <img class="card opponent" alt="op3"/>
         <img class="card opponent" alt="op4"/>
         <img class="card opponent" alt="op5"/>
-      </div>
-
-      <!--山札-->
-      <div class="deck-area">
-        <img src="images/blue.png" id="deck"class="deck-card card" alt="山札">
       </div>
 
       <!--自分の手札-->
@@ -30,6 +30,10 @@
       <img class="card you" alt="you5">
     </div>
     
+    <!--役の判定表示結果-->
+    <div id="result-area"></div>
+
+    <!--ボタン群-->
     <div class="button-area" >
         <button class="button" id="start">スタート</button>
         <button class="button" id="reveal" disabled>カードを確認</button>
@@ -46,9 +50,8 @@
     </div>
   
   </table>
-<div id="result-area"></div>
+<!--スクリプト-->
 <script type="module" src="js/app.js"></script>
 <script type="module" src="js/test.js"></script>
-
 </body>
 </html>
