@@ -12,6 +12,7 @@ let cards=[];
 
 startButton.addEventListener("click",()=> {
 const deck =[...Array(52)].map((_,i) =>new Card(i + 1));
+//
 //シャッフル
 for(let i=deck.length-1;i>0;i--){
 const j =Math.floor(Math.random()*( i + 1));
@@ -66,7 +67,9 @@ function drawCards(){
     img.src =cardImage;
     });
 }
-function animateDealing(cards){
+function animateDealing(){
+    const deckImage = document.getElementById("deck");
+
     [...Array(5)].forEach((_,i)=> {
         setTimeout(()=>{
             opponentCards[i].classList.add('deal-to-top');
@@ -76,9 +79,37 @@ function animateDealing(cards){
         },i*600);
     });
 }
+function dealEromDeckTo(target){
+    const deckImage = document.getElementById("deck");
+    const clone =deckImage.cloneNode();// 山札をコピー
 
+    clone.classListadd("dealing");// アニメーション用クラス
+    document.body.appendChild(clone); //bodyに追加
 
+    //山札の位置と、対象の位置を取得
+    const deckRect = deckImage.getBoundingClientRect();
+    const targetRect =target.getBoundingClientRect();
+
+    //移動距離を計算
+    const dx = targetRect.left - deckRect.left;
+    const dy = targetRect.top -  deckRect.top;
+
+    //初期位置をdeckの位置に固定
+    clone.style.position = "absolute";
+    clone.style.left =`${deckRect.left}px`;
+    clone.style.top =`${deckRect.top}px`;
+    clone.style.width =`${deckRect.top}px`;
+
+    //移動させる
+    requestAnimationFrame(()=> {
+        clone.style.transform = `translate(${dx}px,${dy}px)`;
+    });
+    //終了後に削除し、画像を表示
+    setTimeout(() => {
+        document.body.removeChild(clone);
+        target.src ="images/blue.png";//実際の裏面カード表示
+    },500);
+}
 function displayResult(resultText){
     document.getElementById("result-area").innerText= resultText;
 }
- 
