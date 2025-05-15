@@ -13,29 +13,31 @@ body {
 
 /*山札の表示位置*/
 .deck-area {
-  margin: 20px 0;
+  display: flex;
+  margin: 100px auto;
+  justify-content: center;
 }
 .deck-card {
-  width: 80px;
+  width: 60px;
   height: auto;
 }
 
 /* プレーヤーの手札、相手の手札*/
-.hand-row,
+#player-hand,
 .opponent-hand {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 20px 0;
-  margin-bottom: 80px;/*下に余白追加でボタンとの重なりを防ぐ*/
-  padding-bottom: 40px;/*十分な下にスペース　*/
+  /*margin-bottom: 80px; 下に余白追加でボタンとの重なりを防ぐ*/
+  /*padding-bottom: 40px;十分な下にスペース　*/ 
 }
 
 /*カード画像*/
 .card {
-  width: 80px;
+  width: 60px;
   height: auto;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 /*結果表示エリア*/
