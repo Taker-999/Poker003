@@ -78,18 +78,15 @@ function drawCards(){
 function animateDealing(cards){
     const deckImg = document.getElementById("deck");
 
-    requestAnimationFrame(() => {   //1フレーム待って描画を確定
-   
-        [...Array(5)].forEach((_,i)=> {
-            setTimeout(()=> {
+    [...Array(5)].forEach((_,i)=> {
+        setTimeout(()=> {
            /* opponentCards[i].classList.add('deal-to-top');*/
-                dealFromDeckTo(deckImg, opponentCards[i]);
-            setTimeout(()=>{
+            dealFromDeckTo(deckImg, opponentCards[i]);
+        setTimeout(()=>{
             /*playerCards[i].classList.add('deal-to-bottom');*/
-                dealFromDeckTo(deckImg, playerCards[i]);
-                },300);//交互に少し遅らせて
-            },i*600);
-        });
+            dealFromDeckTo(deckImg, playerCards[i]);
+        },300);//交互に少し遅らせて
+        },i*600);
     });
 }
 function dealFromDeckTo(fromImg,targetImg) {
@@ -116,7 +113,6 @@ function dealFromDeckTo(fromImg,targetImg) {
     clone.style.top =`${deckRect.top}px`;
     clone.style.width =`${deckRect.width}px`;
     clone.style.zIndex =1000;
-    clone.style.height = `${deckRect.height}px`;//追加
     clone.style.transition ="all 0.5s ease-out";
 
     //移動させる
