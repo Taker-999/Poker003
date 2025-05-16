@@ -29,7 +29,7 @@ nodes.forEach(img => {
 */
 //非表示にして準備
 [...playerCards,...opponentCards].forEach(card => {
-    card.style.visibility = "hidden";
+    card.style.opacity = 0;
 });
 
 animateDealing(cards);//配るアニメーションの関数を呼び出す。アニメーション開始。
@@ -128,7 +128,7 @@ function dealFromDeckTo(fromImg,targetImg) {
     //終了後に削除し、画像を表示
     setTimeout(() => {
         clone.remove();
-        targetImg.style.visibility= "visible";
+        targetImg.style.opacity = 1;
     },600);
 }
 function displayResult(resultText){
