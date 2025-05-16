@@ -108,17 +108,16 @@ function dealFromDeckTo(fromImg,targetImg) {
     const dy = targetRect.top -  deckRect.top;
 */
     const clone = fromImg.cloneNode(true);
-    
+    document.body.appendChild(clone);
 
     //初期位置をdeckの位置に固定
-    clone.style.position = "fixed";//変更ポイント0516
+    clone.style.position = "absolute";
     clone.style.left =`${deckRect.left}px`;
     clone.style.top =`${deckRect.top}px`;
     clone.style.width =`${deckRect.width}px`;
     clone.style.zIndex =1000;
     clone.style.height = `${deckRect.height}px`;//追加
     clone.style.transition ="all 0.5s ease-out";
-    document.querySelector(".card-area").appendChild(clone);   //変更ポイント0516
 
     //移動させる
     requestAnimationFrame(()=> {
