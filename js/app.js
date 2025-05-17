@@ -93,7 +93,7 @@ function dealFromDeckTo(fromImg,targetImg) {
     targetImg.style.opacity =0;
 
     //クローン作成
-    const clone = froming.cloneNode(true);
+    const clone = fromIng.cloneNode(true);
     document.body.appendChild(clone); //bodyに追加
     
     //山札の位置と、対象の位置を取得
