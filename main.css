@@ -35,7 +35,7 @@ body {
 
 /*カード画像*/
 .card {
-  visibility: hidden;
+  opacity: 0;
   width: 60px;
   height: auto;
   transition: transform 0.3s ease;
@@ -52,7 +52,7 @@ body {
 }
 
 /*ボタン群を画面下に配置（必要に応じて固定）*/
-.botton-area {
+.button-area {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -74,7 +74,7 @@ body {
   cursor: pointer;
 }
 
-.botton:disabled{
+.button:disabled{
   background-color: #666;
   cursor: not-allowed;
 }
