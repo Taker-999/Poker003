@@ -80,22 +80,22 @@ function animateDealing(cards){
 
     [...Array(5)].forEach((_,i)=> {
         setTimeout(()=> {
-           /* opponentCards[i].classList.add('deal-to-top');*/
+            opponentCards[i].classList.add('deal-to-top');
             dealFromDeckTo(deckImg, opponentCards[i]);
         setTimeout(()=>{
-            /*playerCards[i].classList.add('deal-to-bottom');*/
+            playerCards[i].classList.add('deal-to-bottom');
             dealFromDeckTo(deckImg, playerCards[i]);
         },300);//交互に少し遅らせて
         },i*600);
     });
 }
 function dealFromDeckTo(fromImg,targetImg) {
-   /* const deckImage = document.getElementById("deck");
-    const clone =deckImage.cloneNode();// 山札をコピー
+    const deckImage = document.getElementById("deck");
+//   const clone =deckImage.cloneNode();// 山札をコピー
 
     clone.classListadd("dealing");// アニメーション用クラス
     document.body.appendChild(clone); //bodyに追加
-   */
+    
     //山札の位置と、対象の位置を取得
     const deckRect = fromImg.getBoundingClientRect();
     const targetRect =targetImg.getBoundingClientRect();
