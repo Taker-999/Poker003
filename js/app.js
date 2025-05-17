@@ -124,6 +124,7 @@ function dealFromDeckTo(fromImg,targetImg) {
     //終了後に削除し、画像を表示
     setTimeout(() => {
         clone.remove();
+        targetImg.src = "images/blue.png"; // 裏面画像を設定
         targetImg.style.opacity = 1;
     },600);
 }
