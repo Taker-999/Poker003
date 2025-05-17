@@ -36,9 +36,7 @@ body {
 /*カード画像*/
 .card {
   opacity: 0;
-  width: 60px;
-  height: auto;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 /*結果表示エリア*/

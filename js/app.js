@@ -90,42 +90,37 @@ function animateDealing(cards){
     });
 }
 function dealFromDeckTo(fromImg,targetImg) {
-    const deckImage = document.getElementById("deck");
-//   const clone =deckImage.cloneNode();// 山札をコピー
+    targetImg.style.opacity =0;
 
-    clone.classListadd("dealing");// アニメーション用クラス
+    //クローン作成
+    const clone = froming.cloneNode(true);
     document.body.appendChild(clone); //bodyに追加
     
     //山札の位置と、対象の位置を取得
-    const deckRect = fromImg.getBoundingClientRect();
-    const targetRect =targetImg.getBoundingClientRect();
-/*
-    //移動距離を計算
-    const dx = targetRect.left - deckRect.left;
-    const dy = targetRect.top -  deckRect.top;
-*/
-    const clone = fromImg.cloneNode(true);
-    document.body.appendChild(clone);
+    const fromRect = fromImg.getBoundingClientRect();
+    const toRect =targetImg.getBoundingClientRect();
 
     //初期位置をdeckの位置に固定
     clone.style.position = "absolute";
     clone.style.left =`${deckRect.left}px`;
     clone.style.top =`${deckRect.top}px`;
     clone.style.width =`${deckRect.width}px`;
-    clone.style.zIndex =1000;
+    clone.style.height =`${deckRect.height}px`;
     clone.style.transition ="all 0.5s ease-out";
+    clone.style.zIndex =999;
 
     //移動させる
     requestAnimationFrame(()=> {
         clone.style.left = `${targetRect.left}px`;
         clone.style.top = `${targetRect.top}px`;
         clone.style.width = `${targetRect.width}px`;
+        clone.style.height = `${toRect.height}px`;
     });
     //終了後に削除し、画像を表示
     setTimeout(() => {
-        clone.remove();
         targetImg.src = "images/blue.png"; // 裏面画像を設定
         targetImg.style.opacity = 1;
+        clone.remove();
     },600);
 }
 function displayResult(resultText){
