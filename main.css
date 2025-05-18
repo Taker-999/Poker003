@@ -18,8 +18,8 @@ body {
   justify-content: center;
 }
 .deck-card {
-  width: 60px;
-  height: auto;
+  position: relative; /* または削除 */
+  margin: 0 auto;
 }
 
 /* プレーヤーの手札、相手の手札*/
@@ -38,8 +38,8 @@ body {
 }
 
 .opponent-hand {
-  margin-bottom: 80px;
-  margin-top: 150px;
+  margin-top: 100px;
+  border: 2px dashed red; /* 位置確認用 */
 }
 /*カード画像*/
 .card {
@@ -169,11 +169,7 @@ body {
   justify-content: center;
   margin: 40px;
 }
-.card{
-  width: 60px;
-  height: 90px;
-  margin:0 5px;
-}*/
+*/
 /*カードを配るアニメーション*/
 @keyframes flyFromDeckToTop {
   from{
