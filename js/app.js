@@ -102,18 +102,18 @@ function dealFromDeckTo(fromImg,targetImg) {
 
     //初期位置をdeckの位置に固定
     clone.style.position = "absolute";
-    clone.style.left =`${deckRect.left}px`;
-    clone.style.top =`${deckRect.top}px`;
-    clone.style.width =`${deckRect.width}px`;
-    clone.style.height =`${deckRect.height}px`;
+    clone.style.left =`${fromRect.left}px`;
+    clone.style.top =`${fromRect.top}px`;
+    clone.style.width =`${fromRect.width}px`;
+    clone.style.height =`${fromRect.height}px`;
     clone.style.transition ="all 0.5s ease-out";
     clone.style.zIndex =999;
 
     //移動させる
     requestAnimationFrame(()=> {
-        clone.style.left = `${targetRect.left}px`;
-        clone.style.top = `${targetRect.top}px`;
-        clone.style.width = `${targetRect.width}px`;
+        clone.style.left = `${toRect.left}px`;
+        clone.style.top = `${toRect.top}px`;
+        clone.style.width = `${toRect.width}px`;
         clone.style.height = `${toRect.height}px`;
     });
     //終了後に削除し、画像を表示
