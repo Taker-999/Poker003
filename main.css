@@ -38,7 +38,7 @@ body {
 }
 
 .opponent-hand {
-  margin-top: 100px;
+  margin-top: 120px;
   border: 2px dashed red; /* 位置確認用 */
 }
 /*カード画像*/
@@ -54,7 +54,7 @@ body {
   margin: 20px 0;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 120px;/*ボタンと結果表示エリアとの間にスペースを設ける*/
+  margin-bottom: 10px;/*ボタンと結果表示エリアとの間にスペースを設ける*/
 }
 
 /*ボタン群を画面下に配置（必要に応じて固定）*/
