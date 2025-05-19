@@ -59,7 +59,7 @@ body {
   margin-top: 30px;
   margin-bottom: 10px;/*ボタンと結果表示エリアとの間にスペースを設ける*/
   position: relative;
-  z-index: 20;
+  z-index: 1000;
 }
 
 /*ボタン群を画面下に配置（必要に応じて固定）*/
