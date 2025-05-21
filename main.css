@@ -34,8 +34,9 @@ body {
 }
 
 #player-hand {
-   margin-top: 10px;
-  margin-bottom: 100px;
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
 }
 
 .opponent-hand {
