@@ -84,6 +84,7 @@ body {
   background-color: #444;
   color: white;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .button:disabled{
