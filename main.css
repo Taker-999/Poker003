@@ -14,7 +14,7 @@ body {
 /*山札の表示位置*/
 .deck-area {
   display: flex;
-  margin: 100px auto;
+  margin: 40px auto;
   justify-content: center;
 }
 .deck-card {
@@ -36,14 +36,14 @@ body {
 #player-hand {
   display: flex;
   margin-top: 0;
-  margin-bottom: 80px;
+  margin-bottom: 140px;
   justify-content: center;
   position: relative;
   gap: 10px;
 }
 
 .opponent-hand {
-  margin-top: 120px;
+  margin-top: 60px;
   border: 2px dashed red; /* 位置確認用 */
 }
 /*カード画像*/
@@ -136,5 +136,7 @@ body {
   position: absolute;
 }
 .game-container{
-  padding-bottom: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 120px;
 }
