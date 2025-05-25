@@ -57,11 +57,10 @@ body {
 /*結果表示エリア*/
 #result-area {
   color: white;
-  font-size:20px;
-  margin: 20px;
+  font-size:24px;
+  line-height: 1.4;
+  margin: 10px auto 15px auto;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 10px;/*ボタンと結果表示エリアとの間にスペースを設ける*/
   position: relative;
   z-index: 1000;
 }
