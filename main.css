@@ -23,7 +23,7 @@ body {
 }
 
 /* プレーヤーの手札、相手の手札*/
-#player-hand,
+/*#player-hand,
 .opponent-hand {
   display: flex;
   justify-content: center;
@@ -31,7 +31,6 @@ body {
   margin: 20px 0;
   /*margin-bottom: 80px; 下に余白追加でボタンとの重なりを防ぐ*/
   /*padding-bottom: 40px;十分な下にスペース　*/ 
-}
 
 #player-hand {
   display: flex;
