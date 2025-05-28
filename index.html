@@ -32,6 +32,17 @@
     color: white;
   }
 
+  .hand, .opponent-hand, .hand-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .deck-area {
+    margin: 10px 0;
+  }
+  
   .hand {
     display: flex;
     gap: 10px;
@@ -42,8 +53,8 @@
   }
 
   .card {
-    width: 60px;
-    height: 90px;
+    width: 120px;
+    height: 180px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
