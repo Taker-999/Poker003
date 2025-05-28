@@ -4,10 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poker</title>
-  <link rel="stylesheet" href="main.css">
+  <!--<link rel="stylesheet" href="main.css"> -->
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(#28a745, #007b33);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 20px;
+  }
+
+  .opponent-result,
+  .player-result {
+    height: 24px;
+    color: white;
+  }
+
+  .hand {
+    display: flex;
+    gap: 10px;
+  }
+
+  .deck {
+    margin: 10px 0;
+  }
+
+  .card {
+    width: 60px;
+    height: 90px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    background-image: url('images/red.png');/*赤いカード画像*/
+    background-size: cover;
+  }
+
+  .card.blue {
+    background-image: url('images/blue.png');/*自分用カード*/
+  }
+
+  .card.yamafuda {
+    background-image: url('images/yamafuda.png');/*山札*/
+  }
+
+  .buttons {
+    margin-top: auto;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(255 ,255, 255 ,0.1);
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+  }
+</style>
 </head>
 <body>
   <div class="game-container">
+      <div class="opponent-result">相手の結果表示</div>
   <!--相手の手札-->
       <div class="opponent-hand">
         <img class="card opponent" src="images/blue.png" alt="op1" />
@@ -30,12 +108,11 @@
       <img class="card you" src="images/blue.png" alt="you4">
       <img class="card you" src="images/blue.png" alt="you5">
     </div>
-    
     <!--役の判定表示結果-->
     <div id="result-area"></div>
 
     <!--ボタン群-->
-    <div class="button-area" >
+    <div class="buttons" >
         <button class="button" id="start">スタート</button>
         <button class="button" id="reveal" disabled>カードを確認</button>
         <button class="button" id="replay" disabled>Replay</button>
@@ -49,7 +126,6 @@
         <button class="button" id="royalflush-test">royalflush-test</button>
         <div id="result"></div>
     </div>
-  </div>
 
 <!--スクリプト-->
   <script type="module" src="js/app.js"></script>
