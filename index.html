@@ -92,6 +92,23 @@
     background-color: lightgray;
     cursor: not-allowed;
   }
+  @media (max-width: 600px){
+    .card {
+      width: 60px;  /*通常サイズの半分*/
+      height: 90px;
+    }
+    .button-area {
+      flex-direction: column;  /*ボタンを縦並びに*/
+      align-items: center;
+    }
+    .hand, .opponent-hand, .hand-row {
+      flex-wrap: wrap; /*折り返し可能に*/
+    }
+    button {
+      width: 90%;     /*横幅を広げる*/
+      font-size: 1rem;/*小さめに*/
+    }
+  }
 </style>
 </head>
 <body>
