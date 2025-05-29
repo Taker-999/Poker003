@@ -130,7 +130,7 @@ function dealFromDeckTo(fromImg,targetImg) {
         targetImg.src = "images/blue.png"; // 裏面画像を設定
         targetImg.style.opacity = 1;
         clone.remove();
-    },600);
+    },700);
 }
 function displayResult(resultText){
     document.getElementById("result-area").innerText= resultText;
