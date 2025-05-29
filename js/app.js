@@ -14,7 +14,7 @@ let cards=[];
 //const distributesound =new Audio("sounds/haifu.mp3");//カード配布音を設定
 
 startButton.addEventListener("click", () => {
-new Audio("sounds/haifu.mp3").play();//配布音を1回再生。
+
 const deck =[...Array(52)].map((_,i) =>new Card(i + 1));
 //シャッフル
 for(let i = deck.length -1; i>0 ; i--) {
@@ -43,6 +43,7 @@ revealButton.disabled =false; //Revealボタンを有効に
 
 //Revealボタン：表面を表示し、役を判定
 revealButton.addEventListener("click",() => {
+new Audio("sounds/haifu.mp3").play();//配布音を1回再生。
 cards.forEach((card,i)  => {
  const imgPath = "images/"+ String(card.index).padStart(2,"0") + ".png";
  nodes[i].src = imgPath;
