@@ -11,6 +11,8 @@ const playerCards = document.querySelectorAll('.card.you');//アニメーショ�
 const opponentCards = document.querySelectorAll('.card.opponent');//アニメーションでの追加
 let cards=[];
 
+//const distributesound =new Audio("sounds/haifu.mp3");//カード配布音を設定
+
 startButton.addEventListener("click", () => {
 const deck =[...Array(52)].map((_,i) =>new Card(i + 1));
 //シャッフル
@@ -33,7 +35,7 @@ nodes.forEach(img => {
 });
 
 animateDealing(cards);//配るアニメーションの関数を呼び出す。アニメーション開始。
-
+//distributesound.play();//配布音再生を実行
 revealButton.disabled =false; //Revealボタンを有効に
 });
 
@@ -82,9 +84,13 @@ function animateDealing(cards){
         setTimeout(()=> {
             opponentCards[i].classList.add('deal-to-top');
             dealFromDeckTo(deckImg, opponentCards[i]);
+            const sound = new Audio("sounds/haifu.mp3"); //カード配布の際に発生する配布音を設定
+            sound.play();//配布音の実行
         setTimeout(()=>{
             playerCards[i].classList.add('deal-to-bottom');
             dealFromDeckTo(deckImg, playerCards[i]);
+            const sound =new Audio("sounds/haifu.mp3");
+            sound.play();
         },300);//交互に少し遅らせて
         },i*600);
     });
