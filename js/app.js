@@ -94,8 +94,8 @@ function animateDealing(cards){
             dealFromDeckTo(deckImg, playerCards[i]);
             const sound =new Audio("sounds/haifu.mp3");
             sound.play();
-        },300);//交互に少し遅らせて
-        },i*600);
+        },600);//交互に少し遅らせて
+        },i*1200);
     });
 }
 function dealFromDeckTo(fromImg,targetImg) {
