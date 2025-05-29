@@ -54,6 +54,7 @@ cards.forEach((card,i)  => {
 //Drawボタン：新しいカードを配る
 drawButton.addEventListener("click",()=>{
     drawCards();
+    new Audio("sounds/haifu.mp3").play();
     const result =judgeHand(cards);
     displayResult(result);
 });
